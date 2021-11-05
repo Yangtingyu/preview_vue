@@ -1,0 +1,17 @@
+{
+  "name": "preview_vue",
+  "version": "1.0.0",
+  "description": "打包静态预览服务器",
+  "main": "index.js",
+  "scripts": {
+    "pkg": "pkg index.js -t win"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.17.1",
+    "connect-history-api-fallback": "^1.6.0",
+    "open": "^8.4.0"
+  }
+}
