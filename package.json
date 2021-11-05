@@ -6,6 +6,11 @@
   "scripts": {
     "pkg": "pkg index.js -t win"
   },
+  "pkg": {
+    "assets": "dist/**/*",
+    "targets": [ "node14-linux-arm64" ],
+    "outputPath": "out"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
