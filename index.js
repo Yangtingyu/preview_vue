@@ -2,6 +2,7 @@ const express = require('express');
 const history = require('connect-history-api-fallback');
 const app = express();
 const open = require('open');
+const path = require('path');
 app.use('/', express.static(path.join(__dirname, 'dist')));
 
 
