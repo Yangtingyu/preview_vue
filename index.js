@@ -3,10 +3,9 @@ const history = require('connect-history-api-fallback');
 const app = express();
 const open = require('open');
 const path = require('path');
-app.use('/', express.static(path.join(__dirname, 'dist')));
 
 
-const staticFileMiddleware = express.static('dist');
+const staticFileMiddleware = express.static(path.join(__dirname + '/dist'));
 app.use(staticFileMiddleware);
 app.use(history({
   disableDotRule: true,
@@ -14,8 +13,12 @@ app.use(history({
 }));
 app.use(staticFileMiddleware);
 
+app.get('/', function (req, res) {
+  res.render(path.join(__dirname + '/dist/index.html'));
+});
+
 const port = 5555;
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
   console.log(`Example app listening on port ${port}!`);
 });
 
